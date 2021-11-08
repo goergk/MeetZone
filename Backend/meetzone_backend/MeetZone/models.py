@@ -24,6 +24,7 @@ class Event(models.Model):
             MinValueValidator(1)
         ])
     people = models.ManyToManyField(User, related_name="players", blank=True)
+    note = models.CharField(max_length=512, blank=True)
 
     def __str__(self):
         return f"{self.type} by {self.creator}. {self.number_of_people}/{self.people_needed}."
