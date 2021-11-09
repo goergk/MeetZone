@@ -1,0 +1,49 @@
+.Icon {
+  fill: white;
+  height: 48px;
+  width: 48px;
+  margin-right: -17px;
+
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+}
+
+.Icon:hover {
+  fill: #2e5090;
+  cursor: pointer;
+
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+}
+
+#Basketball_icon:hover {
+  fill: #dd7e01;
+}
+
+#Chess_icon:hover {
+  fill: #a88253;
+}
+
+#Football_icon:hover {
+  fill: #30bf1c;
+}
+
+#Tennis_icon:hover {
+  fill: #ceff19;
+}
+
+#Volleyball_icon:hover {
+  fill: #2e5090;
+}
+
+#Loader_Icon {
+  margin: auto;
+  background: rgb(255, 255, 255);
+  display: block;
+}
