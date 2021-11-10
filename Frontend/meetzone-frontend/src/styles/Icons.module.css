@@ -1,8 +1,8 @@
 .Icon {
   fill: white;
-  height: 48px;
-  width: 48px;
-  margin-right: -17px;
+  height: 38px;
+  width: 31px;
+  margin-right: 1.5em;
 
   transition: all 500ms ease;
   -o-transition: all 500ms ease;
@@ -12,7 +12,6 @@
 }
 
 .Icon:hover {
-  fill: #2e5090;
   cursor: pointer;
 
   transition: all 500ms ease;
@@ -40,6 +39,14 @@
 
 #Volleyball_icon:hover {
   fill: #2e5090;
+}
+
+#All_Icon {
+  border: 1px solid blue;
+}
+
+#All_icon:hover {
+  fill: #e4ad38;
 }
 
 #Loader_Icon {

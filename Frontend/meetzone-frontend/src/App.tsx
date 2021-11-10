@@ -8,18 +8,22 @@ import Tennis from './components/icons/Tennis';
 import Chess from './components/icons/Chess';
 import Loader from './components/icons/Loader';
 import MeetZone from './components/icons/MeetZone';
+import TopNavbar from './components/navbars/TopNavbar';
+import FilterNavbar from './components/navbars/FilterNavbar';
 
 
 function App() {
   return (
     <div className="App">
-      <Basketball />
+      <TopNavbar />
+      <FilterNavbar />
+      {/* <Basketball />
       <Volleyball />
       <Football />
       <Tennis />
       <Chess />
       <Loader />
-      <MeetZone />
+      <MeetZone /> */}
     </div>
   );
 }

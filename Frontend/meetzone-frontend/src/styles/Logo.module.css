@@ -4,7 +4,6 @@
   align-items: center;
   width: fit-content;
   height: fit-content;
-  border: 1px solid red;
 }
 
 .Icon {
@@ -34,6 +33,8 @@
 .Logo_text {
   font-size: 1.8rem;
   color: #e4ad38;
+  margin: 0px;
+  padding: 0px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

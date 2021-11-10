@@ -1,0 +1,32 @@
+.Button_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e4ad38;
+  border-radius: 25px;
+  width: 6.5em;
+  height: 1.5em;
+  font-size: 18px;
+  padding: 0.2em 0em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 1em;
+
+  transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+}
+
+.Button_container:hover {
+  background-color: #e4ad38;
+  cursor: pointer;
+  transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+}
