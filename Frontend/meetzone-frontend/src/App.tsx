@@ -7,6 +7,7 @@ import Volleyball from './components/icons/Volleyball';
 import Tennis from './components/icons/Tennis';
 import Chess from './components/icons/Chess';
 import Loader from './components/icons/Loader';
+import MeetZone from './components/icons/MeetZone';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Tennis />
       <Chess />
       <Loader />
+      <MeetZone />
     </div>
   );
 }

@@ -1,0 +1,41 @@
+.Icon_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid red;
+}
+
+.Icon {
+  fill: white;
+  height: 48px;
+  width: 48px;
+}
+
+.st0 {
+  fill: #e4ad38;
+  stroke: #1d1d1b;
+  stroke-miterlimit: 10;
+}
+
+.st1 {
+  fill: none;
+  stroke: #1d1d1b;
+  stroke-miterlimit: 10;
+}
+
+.st2 {
+  fill: #ffffff;
+  stroke: #1d1d1b;
+  stroke-miterlimit: 10;
+}
+
+.Logo_text {
+  font-size: 1.8rem;
+  color: #e4ad38;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
