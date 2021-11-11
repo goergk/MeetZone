@@ -1,12 +1,22 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import '../../App.css';
 import classes from '../../styles/Icons.module.css';
 
 const Football = () => {
+    const history = useHistory();
+    const handleClick = () => history.push('/Football');
+    const { pathname } = useLocation();
+
     return (
-        <div className={classes.Icon_Container} id={classes.Football_icon_container}>
+        <div className={classes.Icon_Container} id={classes.Football_icon_container}
+        onClick={handleClick}
+        style={{ backgroundColor: pathname === '/Football' ? '#282c35' : '' }}
+        >
             <div className={classes.Icon_Container_2}>
-                <svg className={classes.Icon} id={classes.Football_icon}>
+                <svg className={classes.Icon} id={classes.Football_icon}
+                style={{ fill: pathname === '/Football' ? '#30bf1c' : '' }}
+                >
                     <path d="M27.5,24c1.6-2.3,2.5-5,2.5-8c0-2.7-0.8-5.2-2.1-7.3c0-0.1-0.1-0.1-0.1-0.2C25.3,4.6,21,2,16,2S6.6,4.6,4.2,8.6
                     c0,0.1-0.1,0.1-0.1,0.2c-1.3,2.1-2,4.6-2,7.3c0,3,0.9,5.7,2.5,8l0.1,0.1C7.1,27.7,11.3,30,16,30s8.8-2.3,11.4-5.8
                     C27.4,24.1,27.4,24.1,27.5,24z M26,22.5L22.4,23L21,21.6l2-5.8l3.1-1.5l2,1.2c0,0.2,0,0.4,0,0.7C28,18.4,27.3,20.7,26,22.5z
@@ -17,7 +27,9 @@ const Football = () => {
             </div>
         
             <div className={classes.Icon_text_container}>
-                <p className={classes.Icon_text}>
+                <p className={classes.Icon_text}
+                style={{ color: pathname === '/Football' ? '#30bf1c' : '' }}
+                >
                     Football
                 </p>
             </div>

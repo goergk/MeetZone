@@ -1,6 +1,6 @@
 import TopNavbar from './components/navbars/TopNavbar';
 import FilterNavbar from './components/navbars/FilterNavbar';
-import CurrentPage from './components/pages/CurrentPage';
+import Page from './components/pages/Page';
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <TopNavbar />
       <FilterNavbar />
-      <CurrentPage />
+      <Page />
     </div>
   );
 }

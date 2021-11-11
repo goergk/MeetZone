@@ -49,10 +49,6 @@
   user-select: none;
 }
 
-#All_icon_container {
-  background-color: #282c35;
-}
-
 #Basketball_icon_container:hover .Icon {
   transition: all 500ms ease;
   -o-transition: all 500ms ease;

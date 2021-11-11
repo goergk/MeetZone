@@ -1,11 +1,14 @@
 import React from 'react';
 import classes from '../../styles/CurrentPage.module.css';
-import IndexPage from './IndexPage';
 
-const CurrentPage = () => {
+interface Props{
+    page_filter: string;
+}
+
+const CurrentPage:React.FC<Props> = ({ page_filter }) => {
     return (
         <div className={classes.Main_container}>
-            {/* <IndexPage /> */}
+            {page_filter}
         </div>
     )
 }

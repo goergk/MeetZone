@@ -1,12 +1,22 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import '../../App.css';
 import classes from '../../styles/Icons.module.css';
 
 const Volleyball = () => {
+    const history = useHistory();
+    const handleClick = () => history.push('/Volleyball');
+    const { pathname } = useLocation();
+
     return (
-        <div className={classes.Icon_Container} id={classes.Volleyball_icon_container}>
+        <div className={classes.Icon_Container} id={classes.Volleyball_icon_container}
+        onClick={handleClick}
+        style={{ backgroundColor: pathname === '/Volleyball' ? '#282c35' : '' }}
+        >
             <div className={classes.Icon_Container_2}>
-                <svg className={classes.Icon}>
+                <svg className={classes.Icon} 
+                style={{ fill: pathname === '/Volleyball' ? '#2160d4' : '' }}
+                >
                     <path d="M23,17.2c0-0.2,0-0.3,0-0.5c0-6.7-4-12.6-9.8-14.5c-1,0.2-2,0.5-2.9,0.9c3.8,3,6.1,7.5,6.3,12.4
                         C18.7,16.6,20.9,17.1,23,17.2z"/>
                     <path d="M15.8,17.3c-1.9,1.2-3.5,2.8-4.6,4.7c0.1,0.1,0.3,0.2,0.4,0.2c5.9,3.4,13.1,2.8,17.6-1.4
@@ -23,7 +33,9 @@ const Volleyball = () => {
             </div>
         
             <div className={classes.Icon_text_container}>
-                <p className={classes.Icon_text}>
+                <p className={classes.Icon_text}
+                style={{ color: pathname === '/Volleyball' ? '#2160d4' : '' }}
+                >
                     Volleyball
                 </p>
             </div>
