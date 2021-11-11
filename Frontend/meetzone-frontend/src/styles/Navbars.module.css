@@ -1,10 +1,19 @@
-.TopNavbar_container {
+.MainNavbar_container {
+  width: 100vw;
+  background-color: #282c35;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 0.5px solid gray;
-  padding: 0.3em 20%;
-  width: 60%;
+  padding: 0.3em 0em;
+}
+
+.TopNavbar_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 76em;
 }
 
 .FilterNavbar_container {
@@ -12,9 +21,10 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 3em;
-  padding: 0.3em 20%;
-  width: 60%;
+  height: 3.8em;
+  margin: 0em auto;
+  padding: 0.3em 0em;
+  width: 76em;
 }
 
 .Buttons_container {

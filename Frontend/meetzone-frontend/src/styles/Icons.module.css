@@ -1,9 +1,10 @@
 .Icon {
   fill: white;
-  height: 38px;
+  height: 31px;
   width: 31px;
-  margin-right: 1.5em;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all 500ms ease;
   -o-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -11,42 +12,153 @@
   -webkit-transition: all 500ms ease;
 }
 
-.Icon:hover {
+.Icon_Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: fit-content;
+  padding: 0.3em 2.2em 0.5em 2.2em;
+  margin-top: 0.5em;
+}
+
+.Icon_Container:hover {
   cursor: pointer;
+}
 
+.Icon_Container_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Icon_text_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Icon_text {
+  margin: 0px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#All_icon_container {
+  background-color: #282c35;
+}
+
+#Basketball_icon_container:hover .Icon {
   transition: all 500ms ease;
   -o-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -webkit-transition: all 500ms ease;
-}
-
-#Basketball_icon:hover {
   fill: #dd7e01;
 }
 
-#Chess_icon:hover {
+#Basketball_icon_container:hover .Icon_text {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  color: #dd7e01;
+}
+
+#Chess_icon_container:hover .Icon {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
   fill: #a88253;
 }
 
-#Football_icon:hover {
+#Chess_icon_container:hover .Icon_text {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  color: #a88253;
+}
+
+#Football_icon_container:hover .Icon {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
   fill: #30bf1c;
 }
 
-#Tennis_icon:hover {
+#Football_icon_container:hover .Icon_text {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  color: #30bf1c;
+}
+
+#Tennis_icon_container:hover .Icon {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
   fill: #ceff19;
 }
 
-#Volleyball_icon:hover {
-  fill: #2e5090;
+#Tennis_icon_container:hover .Icon_text {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  color: #ceff19;
 }
 
-#All_Icon {
-  border: 1px solid blue;
+#Volleyball_icon_container:hover .Icon {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  fill: #2160d4;
 }
 
-#All_icon:hover {
+#Volleyball_icon_container:hover .Icon_text {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  color: #2160d4;
+}
+
+#All_icon_container:hover .Icon {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
   fill: #e4ad38;
+}
+
+#All_icon_container:hover .Icon_text {
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  color: #e4ad38;
 }
 
 #Loader_Icon {
