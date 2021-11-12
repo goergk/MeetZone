@@ -8,9 +8,11 @@
 
 .Icon {
   fill: white;
-  height: 48px;
-  width: 48px;
-  margin-left: -8px;
+  height: 42px;
+  width: 42px;
+  margin-left: -10px;
+  margin-right: -10px;
+  transform: scale(0.8);
 }
 
 .st0 {
@@ -40,4 +42,12 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transform: scale(0.8);
+}
+
+@media only screen and (max-width: 624px) {
+  .Icon {
+    margin-left: 0.2em;
+    transform: scale(0.9);
+  }
 }
