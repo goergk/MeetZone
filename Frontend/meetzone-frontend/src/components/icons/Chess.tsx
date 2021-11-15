@@ -2,20 +2,21 @@ import React from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import '../../App.css';
 import classes from '../../styles/Icons.module.css';
+import { PageType } from '../pages/PageType';
 
 const Chess = () => {
     const history = useHistory();
-    const handleClick = () => history.push('/Chess');
+    const handleClick = () => history.push(`/${PageType.CHESS}`);
     const { pathname } = useLocation();
 
     return ( 
         <div className={classes.Icon_Container} id={classes.Chess_icon_container}
         onClick={handleClick}
-        style={{ backgroundColor: pathname === '/Chess' ? '#282c35' : '' }}
+        style={{ backgroundColor: pathname === `/${PageType.CHESS}` ? '#282c35' : '' }}
         >
             <div className={classes.Icon_Container_2}>
                 <svg className={classes.Icon}
-                style={{ fill: pathname === '/Chess' ? '#a88253' : '' }}
+                style={{ fill: pathname === `/${PageType.CHESS}` ? '#a88253' : '' }}
                 >
                     <path d="M7.2,16l1.1-0.2c1.6-0.3,3.3-0.5,5-0.7c-2.4,2.3-3.9,5.3-4.7,7.9h14.7c0.4-1.5,1.1-3,2.3-4.1l0.2-0.2
                         c0.2-0.2,0.3-0.4,0.3-0.6C26.6,13,24.2,8,19.8,5.3c-0.8-1.4-2-2.4-3.6-2.9l-0.9-0.3C15,2,14.7,2,14.4,2.2C14.2,2.4,14,2.7,14,3v2.4
@@ -26,7 +27,7 @@ const Chess = () => {
         
             <div className={classes.Icon_text_container}>
                 <p className={classes.Icon_text}
-                style={{ color: pathname === '/Chess' ? '#a88253' : '' }}
+                style={{ color: pathname === `/${PageType.CHESS}` ? '#a88253' : '' }}
                 >
                     Chess
                 </p>

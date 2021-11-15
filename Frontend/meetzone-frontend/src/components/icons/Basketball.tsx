@@ -2,20 +2,21 @@ import React from 'react';
 import '../../App.css';
 import classes from '../../styles/Icons.module.css';
 import { useHistory, useLocation } from 'react-router-dom';
+import { PageType } from '../pages/PageType';
 
 const Basketball = () => {
     const history = useHistory();
-    const handleClick = () => history.push('/Basketball');
+    const handleClick = () => history.push(`/${PageType.BASKETBALL}`);
     const { pathname } = useLocation();
 
     return (
         <div className={classes.Icon_Container} id={classes.Basketball_icon_container}
         onClick={handleClick}
-        style={{ backgroundColor: pathname === '/Basketball' ? '#282c35' : '' }}
+        style={{ backgroundColor: pathname === `/${PageType.BASKETBALL}` ? '#282c35' : '' }}
         >
             <div className={classes.Icon_Container_2}>
                 <svg className={classes.Icon}
-                style={{ fill: pathname === '/Basketball' ? '#dd7e01' : '' }}
+                style={{ fill: pathname === `/${PageType.BASKETBALL}` ? '#dd7e01' : '' }}
                 >
                         <path d="M17,2.1V15h3.1c0.2-3.8,1.7-7.4,4.3-10.2C22.3,3.2,19.7,2.2,17,2.1z"/>
                         <path d="M22.1,17c0.2,3.3,1.6,6.4,3.8,8.9c2.3-2.3,3.8-5.4,4.1-8.9H22.1z"/>
@@ -30,7 +31,7 @@ const Basketball = () => {
         
             <div className={classes.Icon_text_container}>
                 <p className={classes.Icon_text}
-                style={{ color: pathname === '/Basketball' ? '#dd7e01' : '' }}
+                style={{ color: pathname === `/${PageType.BASKETBALL}` ? '#dd7e01' : '' }}
                 >
                     Basketball
                 </p>
