@@ -1,0 +1,47 @@
+.Form {
+  position: relative;
+  width: 20em;
+  height: 3em;
+  margin-bottom: 1em;
+}
+
+.Form_Input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid lightgray;
+  border-radius: 0.5em;
+  color: white;
+  outline: none;
+  padding: 1.25em;
+  background: none;
+  font-size: 1em;
+}
+
+.Form_Input:hover {
+  border-color: #f1ef78;
+}
+
+.Form_Input:focus {
+  border-color: #e4ad38;
+}
+
+.Form_Label {
+  position: absolute;
+  left: 0.7em;
+  top: 0.9em;
+  padding: 0 0.5em;
+  color: white;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #282c35;
+}
+
+.Form_Input:focus + .Form_Label,
+.Form_Input:not(:placeholder-shown).Form_Input:not(:focus) + .Form_Label {
+  top: -0.5em;
+  font-size: 0.8em;
+  left: 0.9em;
+}

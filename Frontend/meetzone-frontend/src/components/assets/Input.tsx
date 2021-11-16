@@ -8,8 +8,9 @@ interface Props{
 
 const Input:React.FC<Props> = ({ type, name }) => {
     return (
-        <div className={classes.Form_Container}>
-            <input type={type} id={name}/>
+        <div className={classes.Form}>
+            <input type={type} id={name} className={classes.Form_Input} autoComplete="off" placeholder=" "/>
+            <label htmlFor={name} className={classes.Form_Label}>{name}</label>
         </div>
     )
 }

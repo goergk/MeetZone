@@ -1,10 +1,12 @@
 import React from 'react';
 import classes from '../../styles/Page.module.css';
 import CurrentPage from './CurrentPage';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { PageType } from './PageType';
 
 const Page = () => {
+    const { pathname } = useLocation();
+
     return (
         <div className={classes.Main_container}>
             <Switch>

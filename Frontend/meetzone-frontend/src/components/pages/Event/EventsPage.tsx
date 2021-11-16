@@ -8,7 +8,7 @@ interface Props{
 const EventsPage:React.FC<Props> = ({ page_filter }) => {
     return (
         <div className={classes.Main_container}>
-            <h2>
+            <h2 className={classes.Header}>
                 { page_filter } Events:
             </h2>            
         </div>

@@ -1,0 +1,72 @@
+.Main_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - (3.8em + 1.2em + 0.5px + 49px + 3em));
+}
+
+.Main_container * {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Main_container *,
+.Main_container *::before,
+.Main_container *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.Header {
+  margin-bottom: 1.5em;
+}
+
+.Link {
+  color: white;
+  text-decoration: none;
+}
+
+.Link:hover {
+  color: #e4ad38;
+}
+
+@media only screen and (max-width: 624px) {
+}
