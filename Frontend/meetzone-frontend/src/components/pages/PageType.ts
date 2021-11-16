@@ -4,5 +4,7 @@ export enum PageType {
     FOOTBALL = "Football",
     VOLLEYBALL = "Volleyball",
     TENNIS = "Tennis",
-    CHESS = "Chess"
+    CHESS = "Chess",
+    SIGNIN = "Sign In",
+    SIGNUP = "Sign Up"
 }

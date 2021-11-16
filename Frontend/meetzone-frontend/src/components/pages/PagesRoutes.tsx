@@ -25,7 +25,13 @@ const Page = () => {
                 </Route>
                 <Route path={`/${PageType.CHESS}`}>
                     <CurrentPage page_filter={PageType.CHESS}/>
-                </Route>                
+                </Route>
+                <Route path={`/${PageType.SIGNIN}`}>
+                    <CurrentPage page_filter={PageType.SIGNIN}/>
+                </Route> 
+                <Route path={`/${PageType.SIGNUP}`}>
+                    <CurrentPage page_filter={PageType.SIGNUP}/>
+                </Route>                 
             </Switch>            
         </div>
     )

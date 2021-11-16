@@ -1,18 +1,18 @@
 import React from 'react';
-import classes from '../../styles/CurrentPage.module.css';
+import EventsPage from './Event/EventsPage';
+import { PageType } from './PageType';
+import SignIn from './SignIn/SignIn';
+import SignUp from './SignUp/SignUp';
 
 interface Props{
     page_filter: string;
 }
 
 const CurrentPage:React.FC<Props> = ({ page_filter }) => {
-    return (
-        <div className={classes.Main_container}>
-            <h2>
-                {page_filter} events:
-            </h2>            
-        </div>
-    )
+    if (page_filter ===  PageType.SIGNIN){ return (<SignIn />) }
+    if (page_filter ===  PageType.SIGNUP){ return (<SignUp />) }
+    else { return (<EventsPage page_filter={page_filter}/>) }
+    
 }
 
 export default CurrentPage;
