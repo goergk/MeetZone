@@ -1,8 +1,12 @@
+.Form_Container {
+  position: relative;
+}
+
 .Form {
   position: relative;
   width: 20em;
   height: 3em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .Form_Input {
@@ -40,8 +44,42 @@
 }
 
 .Form_Input:focus + .Form_Label,
-.Form_Input:not(:placeholder-shown).Form_Input:not(:focus) + .Form_Label {
+.Form_Input:not(:placeholder-shown).Form_Input:not(:focus) + .Form_Label,
+.Form_Input_error:focus + .Form_Label,
+.Form_Input_error:not(:placeholder-shown).Form_Input_error:not(:focus)
+  + .Form_Label {
   top: -0.5em;
   font-size: 0.8em;
   left: 0.9em;
+}
+
+.error {
+  top: 5em;
+  position: absolute;
+  color: red;
+  font-size: 0.6em;
+  font-weight: 600;
+}
+
+.Form_Input_error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid red;
+  border-radius: 0.5em;
+  color: white;
+  outline: none;
+  padding: 1.25em;
+  background: none;
+  font-size: 1em;
+}
+
+.Form_Input_error:hover {
+  border-color: rgb(235, 117, 117);
+}
+
+.Form_Input_error:focus {
+  border-color: red;
 }

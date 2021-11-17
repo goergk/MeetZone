@@ -11,8 +11,6 @@ const SignIn = () => {
                 Sign In
             </h2>
             <div className={classes.FormContainer}>
-                <Input type="text" name="Username"/>
-                <Input type="password" name="Password"/>
             </div>
             <NavLink to={PageType.SIGNUP} className={classes.Link}>Don't have an Account?</NavLink>
         </div>
