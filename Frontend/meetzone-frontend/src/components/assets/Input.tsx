@@ -24,6 +24,7 @@ const Input:React.FC<Props> = ({ type, name, text }) => {
         
         
     )
-}
+} 
+
 
 export default Input;
