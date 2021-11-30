@@ -4,8 +4,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class User(AbstractUser):
-    trust_index = models.IntegerField()
+    trust_index = models.IntegerField(null=True, default=0, editable=False)
     pass
+
 class Event(models.Model):
     creator =  models.ForeignKey(User, on_delete=models.CASCADE, related_name="post_creator")
     creation_date = models.DateTimeField(auto_now_add=True)
