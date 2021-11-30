@@ -1,35 +1,42 @@
-import { ErrorMessage, useField } from 'formik';
-import React from 'react';
-import classes from '../../styles/Input.module.css';
+import React from "react";
+import classes from "../../styles/Input.module.css";
 
-interface Props{
-    type: string,
-    name: string,
-    text: string
+interface Props {
+  type: string;
+  name: string;
+  text: string;
+  error: string | undefined;
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input:React.FC<Props> = ({ type, name, text }) => {
-    const [field, meta] = useField(name);
-
-    return (
-        <div className={classes.Form_Container}>
-            <div className={classes.Form}>                 
-                <input 
-                    {...field} 
-                    type={type} 
-                    autoComplete="off" 
-                    placeholder=" "
-                    className={meta.touched && meta.error ? classes.Form_Input_error : classes.Form_Input}
-                    id={name}
-                /> 
-                <label htmlFor={name} className={classes.Form_Label}>{text}</label>                                           
-            </div>
-            <ErrorMessage component="div" name={field.name} className={classes.error}/>
-        </div>
-        
-        
-    )
-} 
-
+const Input: React.FC<Props> = ({
+  type,
+  name,
+  text,
+  error,
+  value,
+  onChange,
+}) => {
+  return (
+    <div className={classes.Form_Container}>
+      <div className={classes.Form}>
+        <input
+          value={value}
+          type={type}
+          autoComplete="off"
+          placeholder=" "
+          className={error ? classes.Form_Input_error : classes.Form_Input}
+          id={name}
+          onChange={onChange}
+        />
+        <label htmlFor={name} className={classes.Form_Label}>
+          {text}
+        </label>
+      </div>
+      {error && <div className={classes.error}>{error}</div>}
+    </div>
+  );
+};
 
 export default Input;
