@@ -5,6 +5,7 @@ import classes from '../../../styles/Sign.module.css';
 import Input from '../../assets/Input';
 import { PageType } from '../PageType';
 import * as Yup from 'yup';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const INITIAL_FORM_STATE = {
     Username: '',
@@ -26,7 +27,7 @@ const FORM_VALIDATION = Yup.object().shape({
       )
      .required('Password required.'),
     ConfirmPassword: Yup.string()
-     .oneOf([Yup.ref('password'), null], 'Password doesn\'t match')
+     .oneOf([Yup.ref('Password'), null], 'Password doesn\'t match')
      .required('Confirm password.')    
 });
 
@@ -37,12 +38,15 @@ const SignUp = () => {
             ...INITIAL_FORM_STATE
         }}
         validationSchema={FORM_VALIDATION}
+        validateOnChange={false}
+        validateOnBlur={false}
         onSubmit={values => {
             console.log(values);
         }}
         >
             {formik => (
                 <div className={classes.Main_container}>
+                    <AccountCircleIcon fontSize="large"/>
                     <h2 className={classes.Header}>
                         Sing Up
                     </h2>
@@ -52,6 +56,7 @@ const SignUp = () => {
                             <Input type="text" name="Email" text="Email"/>
                             <Input type="password" name="Password" text="Password"/>
                             <Input type="password" name="ConfirmPassword" text="Confirm Password"/>
+                            <button className={classes.Sign_Button}>Sign Up</button>
                         </Form>
                     </div>
                     <NavLink to={PageType.SIGNIN} className={classes.Link}>Already have an Account?</NavLink>

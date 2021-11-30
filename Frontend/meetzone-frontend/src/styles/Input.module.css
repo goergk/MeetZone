@@ -39,7 +39,7 @@
   padding: 0 0.5em;
   color: white;
   cursor: text;
-  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  transition: top 150ms ease-in, left 150ms ease-in, font-size 150ms ease-in;
   background-color: #282c35;
 }
 

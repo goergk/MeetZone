@@ -14,8 +14,13 @@ const Input:React.FC<Props> = ({ type, name, text }) => {
     return (
         <div className={classes.Form_Container}>
             <div className={classes.Form}>                 
-                <input {...field} type={type} autoComplete="off" placeholder=" "
-                className={meta.touched && meta.error ? classes.Form_Input_error : classes.Form_Input}
+                <input 
+                    {...field} 
+                    type={type} 
+                    autoComplete="off" 
+                    placeholder=" "
+                    className={meta.touched && meta.error ? classes.Form_Input_error : classes.Form_Input}
+                    id={name}
                 /> 
                 <label htmlFor={name} className={classes.Form_Label}>{text}</label>                                           
             </div>

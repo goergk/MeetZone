@@ -8,13 +8,9 @@ interface Props{
 }
 
 const Button:React.FC<Props> = ({ content }) => {
-    const history = useHistory();
-    const handleClick = () => history.push(`/${content}`);
 
     return (
-        <div className={classes.Button_container}
-        onClick={handleClick}
-        >
+        <div className={classes.Button_container}>
             {content}
         </div>
     )
