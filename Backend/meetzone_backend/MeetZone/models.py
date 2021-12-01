@@ -4,7 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class User(AbstractUser):
-    trust_index = models.IntegerField(null=True, default=0, editable=False)
+    trust_index = models.IntegerField(default=0, editable=False)
     pass
 
 class Event(models.Model):
