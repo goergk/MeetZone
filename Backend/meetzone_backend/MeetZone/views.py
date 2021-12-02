@@ -119,8 +119,33 @@ def CreateEvent(request):
     serializer = EventSerializer(data=request.data)
 
     if serializer.is_valid():
-        serializer.save()
+        event_data = request.data
+        new_event = Event.objects.create(
+            creator = User.objects.filter(id = event_data['creator']['id']).first(),
+            type =  event_data['type'],
+            number_of_people = event_data['number_of_people'],
+            people_needed = event_data['people_needed'],
+            note = event_data['note']
+        )
+        new_event.save()
+        serializer = EventSerializer(new_event)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def UpdateEvent(request, pk):
+    try:
+        event = Event.objects.get(id=pk)
+    except Event.DoesNotExist:
+        raise Http404
+
+    serializer = EventSerializer(event, data=request.data)
+
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
 
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

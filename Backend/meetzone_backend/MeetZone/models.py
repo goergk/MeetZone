@@ -24,7 +24,6 @@ class Event(models.Model):
             MaxValueValidator(29),
             MinValueValidator(1)
         ])
-    people = models.ManyToManyField(User, related_name="players", blank=True)
     note = models.CharField(max_length=512, blank=True)
 
     def __str__(self):

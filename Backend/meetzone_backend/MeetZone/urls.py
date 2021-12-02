@@ -12,5 +12,6 @@ urlpatterns = [
     path('event/<str:pk>/', views.EventDetails, name="Event Details"),
     path('user/<str:pk>/', views.GetUser, name="User"),
     path('create/', views.CreateEvent, name="Create Event"),
+    path('update/<str:pk>/', views.UpdateEvent, name="Update Event"),
     path('delete/<str:pk>/', views.DeleteEvent, name="Delete Event"),
 ]   
