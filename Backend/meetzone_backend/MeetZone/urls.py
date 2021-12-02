@@ -3,6 +3,9 @@ from . import views
 
 urlpatterns = [
     path('', views.apiRoutes, name="api-routes"),
+    path("login/", views.login_view, name="Login"),
+    path("logout/", views.logout_view, name="Logut"),
+    path("register/", views.register, name="Register"),
     path('events/all/', views.AllEvents, name="Events"),
     path('events/basketball/', views.BasketballEvents, name="Basketball Events"),
     path('events/football/', views.FootballEvents, name="Football Events"),
