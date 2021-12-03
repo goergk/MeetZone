@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGetEventsQuery } from '../../../services/EventsApi';
 import classes from '../../../styles/EventsPage.module.css';
 import Map from '../../map/Map';
 
@@ -7,6 +8,10 @@ interface Props{
 }
 
 const EventsPage:React.FC<Props> = ({ page_filter }) => {
+
+    const { data: Events_data } = useGetEventsQuery(page_filter.toLowerCase());
+
+    console.log(Events_data);
 
     return (
         <div className={classes.Main_container}>
