@@ -11,7 +11,7 @@ interface Props{
 const CurrentPage:React.FC<Props> = ({ page_filter }) => {
     if (page_filter ===  PageType.SIGNIN){ return (<SignIn />) }
     if (page_filter ===  PageType.SIGNUP){ return (<SignUp />) }
-    else { return (<EventsPage page_filter={page_filter}/>) }
+    else { return (<EventsPage page_filter={page_filter}/>)}
     
 }
 
