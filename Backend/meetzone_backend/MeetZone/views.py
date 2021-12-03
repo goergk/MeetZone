@@ -67,7 +67,6 @@ def login_view(request):
         password = user_data["password"]
         user = authenticate(request, username=username, password=password)
 
-        # Check if authentication successful
         if user is not None:
             login(request, user)
             serializer = UserSerializer(user)
