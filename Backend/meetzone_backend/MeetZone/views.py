@@ -98,7 +98,12 @@ def AllEvents(request):
         raise Http404
 
     serializer = EventSerializer(events, many=True)
-    return Response(serializer.data)
+    return Response(
+        {
+            "events":serializer.data,
+            "length":len(events)
+        }        
+        )
 
 
 @api_view(['GET'])
@@ -109,7 +114,12 @@ def BasketballEvents(request):
         raise Http404
 
     serializer = EventSerializer(events, many=True)
-    return Response(serializer.data)
+    return Response(
+        {
+            "events":serializer.data,
+            "length":len(events)
+        }        
+        )
 
 
 @api_view(['GET'])
@@ -120,7 +130,12 @@ def FootballEvents(request):
         raise Http404
 
     serializer = EventSerializer(events, many=True)
-    return Response(serializer.data)
+    return Response(
+        {
+            "events":serializer.data,
+            "length":len(events)
+        }        
+        )
 
 
 @api_view(['GET'])
@@ -131,7 +146,12 @@ def VolleyballEvents(request):
         raise Http404
 
     serializer = EventSerializer(events, many=True)
-    return Response(serializer.data)
+    return Response(
+        {
+            "events":serializer.data,
+            "length":len(events)
+        }        
+        )
 
 
 @api_view(['GET'])
@@ -142,7 +162,12 @@ def TennisEvents(request):
         raise Http404
 
     serializer = EventSerializer(events, many=True)
-    return Response(serializer.data)
+    return Response(
+        {
+            "events":serializer.data,
+            "length":len(events)
+        }        
+        )
 
 
 @api_view(['GET'])
@@ -153,7 +178,12 @@ def ChessEvents(request):
         raise Http404
 
     serializer = EventSerializer(events, many=True)
-    return Response(serializer.data)
+    return Response(
+        {
+            "events":serializer.data,
+            "length":len(events)
+        }        
+        )
 
 
 @api_view(['GET'])
