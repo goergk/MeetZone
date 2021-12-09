@@ -88,5 +88,10 @@
   border: 1px solid #e4ad38;
 }
 
+.Login_Error {
+  font-size: 0.7em;
+  color: red;
+}
+
 @media only screen and (max-width: 624px) {
 }
