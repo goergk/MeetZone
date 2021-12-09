@@ -16,9 +16,9 @@ const Map = () => {
                 margin={[50, 50, 50, 50]}
                 // options={}
                 // onChange={}
-                // onChildClick={}
+                // onChildClick={}                
                 options={{
-                    backgroundColor: "#282C35",
+                    backgroundColor: "#282C35",                    
                     styles: [
                         { elementType: "geometry", stylers: [{ color: "#282C35" }] },
                         { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
