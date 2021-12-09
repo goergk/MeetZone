@@ -7,17 +7,22 @@ export interface Creator {
     trust_index: number;
 }
 
-export interface RootObject {
+export interface Event {
     id: number;
     creator: Creator;
     creation_date: Date;
-    edit_date?: Date | null;
-    closing_date?: Date | null;
+    edit_date?: any;
+    closing_date?: any;
     closed: boolean;
     type: string;
     number_of_people: number;
     people_needed: number;
     note: string;
+}
+
+export interface RootObject {
+    events: Event[];
+    length: number;
 }
 
 const baseUrl: string = 'http://127.0.0.1:8000/api/';
