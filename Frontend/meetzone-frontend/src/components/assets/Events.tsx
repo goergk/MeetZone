@@ -25,7 +25,7 @@ const Events:React.FC<Props> = ({ data }) => {
                 else if(event.type === 'Chess'){color = '#a88253'} 
 
                 return(
-                    <div className={classes.Single_Event}>
+                    <div className={classes.Single_Event} key={event.id}>
                         <div className={classes.Event_Logo} style={{'borderColor': color}}>
                             <svg style={{'width': '32px', 'height': '32px', 'fill': color}}>
                                 {event.type === 'Basketball' && <Basketball_icon />}
@@ -61,7 +61,7 @@ const Events:React.FC<Props> = ({ data }) => {
                             <div className={classes.Map_Icon_Container}>
                                 <svg className={classes.Map_icon}>
                                     <Map_icon />
-                                </svg>                                
+                                </svg>                                                                
                             </div>
                         </div>
                     </div>

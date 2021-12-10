@@ -31,6 +31,10 @@
   align-items: center;
 }
 
+.Logout_Icon:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1500px) {
   .TopNavbar_container {
     width: 65em;

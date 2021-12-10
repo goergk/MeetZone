@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import classes from "../../../styles/Sign.module.css";
 import Input from "../../assets/Input";
 import { PageType } from "../PageType";
@@ -28,11 +28,38 @@ const FORM_VALIDATION = Yup.object().shape({
     .required("Confirm password."),
 });
 
-const onSubmit = () => {
-  console.log("Submitted");
-};
-
 const SignUp = () => {
+  const history = useHistory();
+  const changeRoute = () => history.push('/');
+  const [error, setError] = useState('');
+
+  const onSubmit = () => {
+    fetch('http://127.0.0.1:8000/api/register/',{
+        method:"POST",
+        headers: {
+            'Accept': 'application/json, text/plain',
+            'Content-Type': 'application/json;charset=UTF-8'
+        },
+        body: JSON.stringify({
+          "username": values.Username,
+          "email": values.Email,
+          "password": values.Password,
+          "confirmation": values.ConfirmPassword
+        })
+        }).then((response) => {response.json().then(data => {
+        console.warn("result", data);
+        if(response.ok){
+            setError('');
+            sessionStorage.setItem('login',data.login);
+            changeRoute();           
+      } 
+      else{
+        setError('');
+        setError('Username already taken.');  
+      }
+    })});
+  };
+
   const { handleChange, handleSubmit, values, errors } = useFormik({
     initialValues,
     validationSchema: FORM_VALIDATION,
@@ -40,50 +67,62 @@ const SignUp = () => {
     validateOnBlur: false,
     onSubmit,
   });
+
   return (
     <div className={classes.Main_container}>
-      <AccountCircleIcon fontSize="large" />
-      <h2 className={classes.Header}>Sing Up</h2>
-      <div className={classes.FormContainer}>
-        <form onSubmit={handleSubmit}>
-          <Input
-            error={errors.Username}
-            value={values.Username}
-            onChange={handleChange}
-            type="text"
-            name="Username"
-            text="Username"
-          />
-          <Input
-            error={errors.Email}
-            value={values.Email}
-            onChange={handleChange}
-            type="text"
-            name="Email"
-            text="Email"
-          />
-          <Input
-            error={errors.Password}
-            value={values.Password}
-            onChange={handleChange}
-            type="password"
-            name="Password"
-            text="Password"
-          />
-          <Input
-            error={errors.ConfirmPassword}
-            value={values.ConfirmPassword}
-            onChange={handleChange}
-            type="password"
-            name="ConfirmPassword"
-            text="Confirm Password"
-          />
-          <button type='submit' className={classes.Sign_Button}>Sign Up</button>
-        </form>
-      </div>
-      <NavLink to={PageType.SIGNIN} className={classes.Link}>
-        Already have an Account?
-      </NavLink>
+      {
+        !sessionStorage.getItem("login") 
+        ?
+        <>
+        <AccountCircleIcon fontSize="large" />
+        <h2 className={classes.Header}>Sing Up</h2>
+        <div className={classes.FormContainer}>
+          <form onSubmit={handleSubmit}>
+            <Input
+              error={errors.Username}
+              value={values.Username}
+              onChange={handleChange}
+              type="text"
+              name="Username"
+              text="Username"
+            />
+            <Input
+              error={errors.Email}
+              value={values.Email}
+              onChange={handleChange}
+              type="text"
+              name="Email"
+              text="Email"
+            />
+            <Input
+              error={errors.Password}
+              value={values.Password}
+              onChange={handleChange}
+              type="password"
+              name="Password"
+              text="Password"
+            />
+            <Input
+              error={errors.ConfirmPassword}
+              value={values.ConfirmPassword}
+              onChange={handleChange}
+              type="password"
+              name="ConfirmPassword"
+              text="Confirm Password"
+            />
+            {error !== '' && <p className={classes.Login_Error}>{error}</p>}
+            <button type='submit' className={classes.Sign_Button}>Sign Up</button>
+          </form>
+        </div>
+        <NavLink to={PageType.SIGNIN} className={classes.Link}>
+          Already have an Account?
+        </NavLink>
+        </>
+        :
+        <h2>
+          You are already logged in.
+        </h2>
+      }
     </div>
   );
 };
