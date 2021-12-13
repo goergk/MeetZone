@@ -7,6 +7,8 @@ import Basketball_icon from '../icons/Basketball_icon';
 import Tennis_icon from '../icons/Tennis_icon';
 import Chess_icon from '../icons/Chess_icon';
 import Map_icon from '../icons/Map_icon';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
 
 interface Props{
     data: RootObject | undefined;
@@ -14,6 +16,7 @@ interface Props{
 
 const Events:React.FC<Props> = ({ data }) => {
     let color = 'white'
+    const login = useSelector((state: RootState) => state.Login.login);
 
     return (
         <>  
@@ -54,9 +57,18 @@ const Events:React.FC<Props> = ({ data }) => {
                                         {event.people_needed}
                                     </span>
                                 </div>
-                                <div className={classes.Join_Button_Container}>
-                                    Join
-                                </div>                                    
+                                {
+                                    login
+                                    ?
+                                    <div className={classes.Join_Button_Container}>
+                                        Join
+                                    </div>
+                                    :
+                                    <h5>
+                                        You have to be logged in to participate.
+                                    </h5>
+                                }
+                                                                    
                             </div>
                             <div className={classes.Map_Icon_Container}>
                                 <svg className={classes.Map_icon}>

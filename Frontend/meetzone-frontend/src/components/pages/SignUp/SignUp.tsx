@@ -6,6 +6,9 @@ import Input from "../../assets/Input";
 import { PageType } from "../PageType";
 import * as Yup from "yup";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../app/store";
+import { signIn } from '../../../features/login';
 
 const initialValues = {
   Username: "",
@@ -32,6 +35,8 @@ const SignUp = () => {
   const history = useHistory();
   const changeRoute = () => history.push('/');
   const [error, setError] = useState('');
+  const { login } = useSelector((state: RootState) => state.Login);
+  const dispatch = useDispatch()
 
   const onSubmit = () => {
     fetch('http://127.0.0.1:8000/api/register/',{
@@ -50,6 +55,7 @@ const SignUp = () => {
         console.warn("result", data);
         if(response.ok){
             setError('');
+            dispatch(signIn());
             changeRoute();           
       } 
       else{
@@ -70,7 +76,7 @@ const SignUp = () => {
   return (
     <div className={classes.Main_container}>
       {
-        !sessionStorage.getItem("login") 
+        !login
         ?
         <>
         <AccountCircleIcon fontSize="large" />

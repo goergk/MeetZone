@@ -3,9 +3,10 @@ import MeetZone from '../icons/MeetZone';
 import Button from '../assets/Button';
 import classes from '../../styles/Navbars.module.css';
 import { Link } from 'react-router-dom';
-import Logout from '../pages/Logout/Logout';
+import Logout from '../assets/LoginNavAssets/Logout';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../app/store';
+import NewEvent from '../assets/LoginNavAssets/NewEvent';
 
 const TopNavbar = () => {
     const login = useSelector((state: RootState) => state.Login.login);
@@ -15,7 +16,8 @@ const TopNavbar = () => {
             <div className={classes.TopNavbar_container}>
                 <Link to="/" style={{ textDecoration: 'none' }}><MeetZone /></Link>                
                 <div className={classes.Buttons_container}>
-                    {!login
+                    {
+                        !login 
                         ?
                         <>                    
                         <Link to="/Sign%20In" style={{ textDecoration: 'none', color: 'white' }}>
@@ -26,7 +28,10 @@ const TopNavbar = () => {
                         </Link>
                         </>
                         :
-                        <Logout />
+                        <>
+                            <NewEvent />                            
+                            <Logout />
+                        </>                        
                     }
                 </div>            
             </div>

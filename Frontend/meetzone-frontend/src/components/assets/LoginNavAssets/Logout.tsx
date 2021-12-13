@@ -10,11 +10,17 @@ const Logout = () => {
     const dispatch = useDispatch()
   
     const handleLogout = () => {
+      sessionStorage.removeItem('isLogged');
       dispatch(signOut());
       changeRoute();
     };
 
-    return (<LogoutIcon className={classes.Logout_Icon} onClick={handleLogout}/>)
+    return (
+      <div onClick={handleLogout} className={classes.Nav_item_container}>
+        <p>Log out</p>
+        <LogoutIcon className={classes.Nav_Icon}/>
+      </div>
+      )
 }
 
 export default Logout;

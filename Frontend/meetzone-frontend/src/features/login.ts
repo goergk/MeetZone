@@ -4,8 +4,14 @@ export interface LoginState {
   login: boolean
 }
 
-const initialState: LoginState = {
+let initialState: LoginState = {
   login: false,
+}
+
+if(sessionStorage.getItem("isLogged")){
+  initialState = {
+    login: true
+  }
 }
 
 export const loginSlice = createSlice({
@@ -13,10 +19,12 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     signIn: (state) => {
-      state.login = true
+      state.login = true;
+      sessionStorage.setItem("isLogged", 'true');
     },
     signOut: (state) => {
       state.login = false
+      sessionStorage.removeItem('isLogged');
     },
   },
 })
