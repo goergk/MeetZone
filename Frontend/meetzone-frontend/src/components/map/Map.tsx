@@ -29,19 +29,20 @@ const Map = () => {
                           stylers: [{ color: "#E4AD38" }],
                         },
                         {
+                          featureType: "transit",
+                          elementType: "labels.icon",
+                          stylers:  [{ visibility: "off" }]
+                        },
+                        {
+                          featureType: "road",
+                          elementType: "labels.icon",
+                          stylers: [
+                            { visibility: "off" }
+                          ]
+                        },
+                        {
                           featureType: "poi",
-                          elementType: "labels.text.fill",
-                          stylers: [{ color: "#E4AD38" }],
-                        },
-                        {
-                          featureType: "poi.park",
-                          elementType: "geometry",
-                          stylers: [{ color: "#263c3f" }],
-                        },
-                        {
-                          featureType: "poi.park",
-                          elementType: "labels.text.fill",
-                          stylers: [{ color: "#6b9a76" }],
+                          stylers: [{ visibility: "off" }],
                         },
                         {
                           featureType: "road",
@@ -77,11 +78,6 @@ const Map = () => {
                           featureType: "transit",
                           elementType: "geometry",
                           stylers: [{ color: "#191919" }],
-                        },
-                        {
-                          featureType: "transit.station",
-                          elementType: "labels.text.fill",
-                          stylers: [{ color: "#d59563" }],
                         },
                         {
                           featureType: "water",
