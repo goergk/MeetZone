@@ -50,7 +50,6 @@ const SignUp = () => {
         console.warn("result", data);
         if(response.ok){
             setError('');
-            sessionStorage.setItem('login',data.login);
             changeRoute();           
       } 
       else{

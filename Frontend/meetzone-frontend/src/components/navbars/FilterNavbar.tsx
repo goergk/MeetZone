@@ -1,6 +1,4 @@
 import React from 'react';
-import MeetZone from '../icons/MeetZone';
-import Button from '../assets/Button';
 import classes from '../../styles/Navbars.module.css';
 import All from '../icons/All';
 import Basketball from '../icons/Basketball';

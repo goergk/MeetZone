@@ -6,6 +6,9 @@ import { PageType } from "../PageType";
 import * as Yup from "yup";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../app/store";
+import { signIn } from '../../../features/login';
 
 const initialValues = {
   Username: "",
@@ -21,24 +24,26 @@ const SignIn = () => {
   const history = useHistory();
   const changeRoute = () => history.push('/');
   const [error, setError] = useState('');
+  const { login } = useSelector((state: RootState) => state.Login);
+  const dispatch = useDispatch()
 
   const onSubmit = () => {
     fetch('http://127.0.0.1:8000/api/login/',{
         method:"POST",
         headers: {
-            'Accept': 'application/json, text/plain',
-            'Content-Type': 'application/json;charset=UTF-8'
+          'Accept': 'application/json, text/plain',
+          'Content-Type': 'application/json; charset=UTF-8'
         },
         body: JSON.stringify({
           "username": values.Username,
           "password": values.Password
         })
-        }).then((response) => {response.json().then(data => {
-        console.warn("result", data);
+        }).then((response) => {response.json().then(data => {                  
         if(response.ok){
-            setError('');
-            sessionStorage.setItem('login',data.login);
-            changeRoute();
+            setError('');           
+            console.log(data);
+            dispatch(signIn());
+            changeRoute(); 
       } 
       else{
         setError('');
@@ -58,7 +63,7 @@ const SignIn = () => {
   return (
     <div className={classes.Main_container}>
       {
-        !sessionStorage.getItem("login") 
+        !login 
         ?
         <>
         <AccountCircleIcon fontSize="large" />
