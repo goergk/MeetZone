@@ -4,20 +4,27 @@ export interface Creator {
     id: number;
     username: string;
     date_joined: Date;
-    trust_index: number;
+}
+
+export interface Person {
+    id: number;
+    username: string;
+    date_joined: Date;
 }
 
 export interface Event {
     id: number;
     creator: Creator;
+    people: Person[];
     creation_date: Date;
-    edit_date?: any;
     closing_date?: any;
     closed: boolean;
     type: string;
     number_of_people: number;
     people_needed: number;
     note: string;
+    lat: string;
+    lng: string;
 }
 
 export interface RootObject {

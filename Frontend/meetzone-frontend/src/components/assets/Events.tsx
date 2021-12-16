@@ -40,10 +40,10 @@ const Events:React.FC<Props> = ({ data }) => {
                         </div>
                         <div className={classes.Event_Content}>
                             <div className={classes.Description_Container}>
-                                <p style={{'fontSize': '0.85em', 'color': 'rgb(202, 202, 202)'}}>
+                                <p style={{'fontSize': '0.8em', 'color': 'rgb(202, 202, 202)'}}>
                                     Created: <b>{event.creation_date.toString().split('T')[0]}</b> by <b>{event.creator.username}</b>
                                 </p>
-                                <p style={{'fontSize': '0.9em'}}>
+                                <p style={{'fontSize': '0.9em', 'marginTop': '0em', 'color': 'rgb(202, 202, 202)'}}>
                                     {event.note}
                                 </p>
                             </div>
@@ -64,7 +64,7 @@ const Events:React.FC<Props> = ({ data }) => {
                                         Join
                                     </div>
                                     :
-                                    <h5>
+                                    <h5 style={{'marginTop': '0.8em', 'textAlign': 'center'}}>
                                         You have to be logged in to participate.
                                     </h5>
                                 }

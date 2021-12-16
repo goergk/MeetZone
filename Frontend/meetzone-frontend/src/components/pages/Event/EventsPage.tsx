@@ -20,7 +20,7 @@ const EventsPage:React.FC<Props> = ({ page_filter }) => {
             <h2 className={classes.Header}>
                 { page_filter } Events:
             </h2>
-            <Map/>
+            <Map data={Events_data}/>
             <div className={classes.Events_container}>
                 { isFetching && <Loader />}
                 { Events_data?.length === 0 ?

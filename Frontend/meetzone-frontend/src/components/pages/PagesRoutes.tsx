@@ -32,7 +32,10 @@ const Page = () => {
                 </Route> 
                 <Route path={`/${PageType.SIGNUP}`}>
                     <CurrentPage page_filter={PageType.SIGNUP}/>
-                </Route>                 
+                </Route>
+                <Route path={`/${PageType.ADD}`}>
+                    <CurrentPage page_filter={PageType.ADD}/>
+                </Route>                  
             </Switch>            
         </div>
     )
