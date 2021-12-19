@@ -3,149 +3,133 @@ import GoogleMapReact from 'google-map-react';
 import classes from '../../styles/Map.module.css';
 import { RootObject } from '../../services/EventsApi';
 import { PathType } from './PathType';
-interface Props{
+import Marker from '../icons/Marker';
+interface Props {
   data: RootObject | undefined;
 }
 
-const Map:React.FC<Props> = ({ data }) => {
-    const events = data?.events;    
-    const center = {lat: 51.107, lng: 17.04}
+const Map: React.FC<Props> = ({ data }) => {
+  const events = data?.events;
+  const center = { lat: 51.107, lng: 17.04 };
+  const zoom = 14;
 
-    const renderMarkers = (map: any, maps: any) => {
-      events?.map(event => {
-        const pos = {lat: Number(event.lat), lng: Number(event.lng)};
-        let color = "";
-        let path = "";
-        
-        if(event.type === "Basketball"){
-          color = "#dd7e01";
-          path = PathType.BASKETBALL
-        } else if(event.type === "Volleyball"){
-          color = "#2160d4";
-          path = PathType.VOLLEYBALL
-        } else if(event.type === "Football"){
-          color = "#30bf1c";
-          path = PathType.FOOTBALL
-        } else if(event.type === "Chess"){
-          color = "#a88253";
-          path = PathType.CHESS
-        } else if(event.type === "Tennis"){
-          color = "#ceff19";
-          path = PathType.TENNIS
+  return (
+    <div className={classes.Map_container} id={center.toString()}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: 'AIzaSyBveP566wgvbJ8Iv9mftPU1jVMtF5tSYSw' }}
+        defaultCenter={center}
+        center={center}
+        defaultZoom={zoom}
+        margin={[50, 50, 50, 50]}
+        // onChange={}
+        // onChildClick={}
+        options={{
+          backgroundColor: "#282C35",
+          styles: [
+            { elementType: "geometry", stylers: [{ color: "#282C35" }] },
+            { elementType: "labels.text.stroke", stylers: [{ color: '#242f3e' }] },
+            { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+            {
+              featureType: "administrative.locality",
+              elementType: "labels.text.fill",
+              stylers: [{ color: "#E4AD38" }],
+            },
+            {
+              featureType: "transit",
+              elementType: "labels.icon",
+              stylers: [{ visibility: "off" }]
+            },
+            {
+              featureType: "road",
+              elementType: "labels.icon",
+              stylers: [
+                { visibility: "off" }
+              ]
+            },
+            {
+              featureType: "poi",
+              stylers: [{ visibility: "off" }],
+            },
+            {
+              featureType: "road",
+              elementType: "geometry",
+              stylers: [{ color: "#191919" }],
+            },
+            {
+              featureType: "road",
+              elementType: "geometry.stroke",
+              stylers: [{ color: "#212a37" }],
+            },
+            {
+              featureType: "road",
+              elementType: "labels.text.fill",
+              stylers: [{ color: "#9ca5b3" }],
+            },
+            {
+              featureType: "road.highway",
+              elementType: "geometry",
+              stylers: [{ color: "#746855" }],
+            },
+            {
+              featureType: "road.highway",
+              elementType: "geometry.stroke",
+              stylers: [{ color: "#1f2835" }],
+            },
+            {
+              featureType: "road.highway",
+              elementType: "labels.text.fill",
+              stylers: [{ color: "#f3d19c" }],
+            },
+            {
+              featureType: "transit",
+              elementType: "geometry",
+              stylers: [{ color: "#191919" }],
+            },
+            {
+              featureType: "water",
+              elementType: "geometry",
+              stylers: [{ color: "#17263c" }],
+            },
+            {
+              featureType: "water",
+              elementType: "labels.text.fill",
+              stylers: [{ color: "#515c6d" }],
+            },
+            {
+              featureType: "water",
+              elementType: "labels.text.stroke",
+              stylers: [{ color: "#17263c" }],
+            },
+          ]
+        }}
+      >
+        {
+          events?.map(event => {
+            let color = "";
+            let path = "";
+
+            if (event.type === "Basketball") {
+              color = "#dd7e01";
+              path = PathType.BASKETBALL
+            } else if (event.type === "Volleyball") {
+              color = "#2160d4";
+              path = PathType.VOLLEYBALL
+            } else if (event.type === "Football") {
+              color = "#30bf1c";
+              path = PathType.FOOTBALL
+            } else if (event.type === "Chess") {
+              color = "#a88253";
+              path = PathType.CHESS
+            } else if (event.type === "Tennis") {
+              color = "#ceff19";
+              path = PathType.TENNIS
+            }
+            return (<Marker lat={Number(event.lat)} lng={Number(event.lng)} color={color} path={path} />)
+          })
         }
-
-        let marker = new maps.Marker({          
-          position: pos,
-          map,
-          icon: {
-            path: path,
-            fillColor: color,
-            fillOpacity: 1,
-            strokeColor: color,
-            scale: 1.15
-          },
-          title: `${event.type} by ${event.creator.username}. People: ${event.number_of_people}/${event.people_needed}`          
-        });
-        
-        return marker;
-      })
-      
-    }
-
-    return (
-        <div className={classes.Map_container}>
-            <GoogleMapReact
-                bootstrapURLKeys={{key: 'AIzaSyBveP566wgvbJ8Iv9mftPU1jVMtF5tSYSw'}}
-                defaultCenter={center}
-                center={center}
-                defaultZoom={14}
-                margin={[50, 50, 50, 50]}
-                // onChange={}
-                // onChildClick={}
-                onGoogleApiLoaded={({map, maps}) => renderMarkers(map, maps)}
-                yesIWantToUseGoogleMapApiInternals={true}              
-                options={{
-                  backgroundColor: "#282C35",                    
-                  styles: [
-                      { elementType: "geometry", stylers: [{ color: "#282C35" }] },
-                      { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-                      { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
-                      {
-                        featureType: "administrative.locality",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#E4AD38" }],
-                      },
-                      {
-                        featureType: "transit",
-                        elementType: "labels.icon",
-                        stylers:  [{ visibility: "off" }]
-                      },
-                      {
-                        featureType: "road",
-                        elementType: "labels.icon",
-                        stylers: [
-                          { visibility: "off" }
-                        ]
-                      },
-                      {
-                        featureType: "poi",
-                        stylers: [{ visibility: "off" }],
-                      },
-                      {
-                        featureType: "road",
-                        elementType: "geometry",
-                        stylers: [{ color: "#191919" }],
-                      },
-                      {
-                        featureType: "road",
-                        elementType: "geometry.stroke",
-                        stylers: [{ color: "#212a37" }],
-                      },
-                      {
-                        featureType: "road",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#9ca5b3" }],
-                      },
-                      {
-                        featureType: "road.highway",
-                        elementType: "geometry",
-                        stylers: [{ color: "#746855" }],
-                      },
-                      {
-                        featureType: "road.highway",
-                        elementType: "geometry.stroke",
-                        stylers: [{ color: "#1f2835" }],
-                      },
-                      {
-                        featureType: "road.highway",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#f3d19c" }],
-                      },
-                      {
-                        featureType: "transit",
-                        elementType: "geometry",
-                        stylers: [{ color: "#191919" }],
-                      },
-                      {
-                        featureType: "water",
-                        elementType: "geometry",
-                        stylers: [{ color: "#17263c" }],
-                      },
-                      {
-                        featureType: "water",
-                        elementType: "labels.text.fill",
-                        stylers: [{ color: "#515c6d" }],
-                      },
-                      {
-                        featureType: "water",
-                        elementType: "labels.text.stroke",
-                        stylers: [{ color: "#17263c" }],
-                      },
-                    ]}}               
-                                  
-            />            
-        </div>
-    )
+      </GoogleMapReact>
+    </div>
+  )
 }
 
 export default Map;

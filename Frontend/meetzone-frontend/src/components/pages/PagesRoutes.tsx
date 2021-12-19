@@ -10,33 +10,33 @@ const Page = () => {
         <div className={classes.Main_container}>
             <Switch>
                 <Route path='/' exact>
-                    <CurrentPage page_filter={`${PageType.ALL}`}/>
+                    <CurrentPage page_filter={`${PageType.ALL}`} />
                 </Route>
                 <Route path={`/${PageType.BASKETBALL}`}>
-                    <CurrentPage page_filter={PageType.BASKETBALL}/>
+                    <CurrentPage page_filter={PageType.BASKETBALL} />
                 </Route>
                 <Route path={`/${PageType.FOOTBALL}`}>
-                    <CurrentPage page_filter={PageType.FOOTBALL}/>
+                    <CurrentPage page_filter={PageType.FOOTBALL} />
                 </Route>
                 <Route path={`/${PageType.VOLLEYBALL}`}>
-                    <CurrentPage page_filter={PageType.VOLLEYBALL}/>
+                    <CurrentPage page_filter={PageType.VOLLEYBALL} />
                 </Route>
                 <Route path={`/${PageType.TENNIS}`}>
-                    <CurrentPage page_filter={PageType.TENNIS}/>
+                    <CurrentPage page_filter={PageType.TENNIS} />
                 </Route>
                 <Route path={`/${PageType.CHESS}`}>
-                    <CurrentPage page_filter={PageType.CHESS}/>
+                    <CurrentPage page_filter={PageType.CHESS} />
                 </Route>
                 <Route path={`/${PageType.SIGNIN}`}>
-                    <CurrentPage page_filter={PageType.SIGNIN}/>
-                </Route> 
+                    <CurrentPage page_filter={PageType.SIGNIN} />
+                </Route>
                 <Route path={`/${PageType.SIGNUP}`}>
-                    <CurrentPage page_filter={PageType.SIGNUP}/>
+                    <CurrentPage page_filter={PageType.SIGNUP} />
                 </Route>
                 <Route path={`/${PageType.ADD}`}>
-                    <CurrentPage page_filter={PageType.ADD}/>
-                </Route>                  
-            </Switch>            
+                    <CurrentPage page_filter={PageType.ADD} />
+                </Route>
+            </Switch>
         </div>
     )
 }

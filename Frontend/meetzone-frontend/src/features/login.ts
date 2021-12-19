@@ -25,6 +25,7 @@ export const loginSlice = createSlice({
     signOut: (state) => {
       state.login = false
       sessionStorage.removeItem('isLogged');
+      sessionStorage.removeItem('user');
     },
   },
 })

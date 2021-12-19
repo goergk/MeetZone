@@ -12,26 +12,26 @@ const Basketball = () => {
 
     return (
         <div className={classes.Icon_Container} id={classes.Basketball_icon_container}
-        onClick={handleClick}
-        style={{ backgroundColor: pathname === `/${PageType.BASKETBALL}` ? '#282c35' : '' }}
+            onClick={handleClick}
+            style={{ backgroundColor: pathname === `/${PageType.BASKETBALL}` ? '#282c35' : '' }}
         >
             <div className={classes.Icon_Container_2}>
-                <svg 
+                <svg
                     className={classes.Icon}
                     style={{ fill: pathname === `/${PageType.BASKETBALL}` ? '#dd7e01' : '' }}
                 >
-                    <Basketball_icon />       
+                    <Basketball_icon />
                 </svg>
             </div>
-        
+
             <div className={classes.Icon_text_container}>
                 <p className={classes.Icon_text}
-                style={{ color: pathname === `/${PageType.BASKETBALL}` ? '#dd7e01' : '' }}
+                    style={{ color: pathname === `/${PageType.BASKETBALL}` ? '#dd7e01' : '' }}
                 >
                     Basketball
                 </p>
             </div>
-        </div>    
+        </div>
     )
 }
 

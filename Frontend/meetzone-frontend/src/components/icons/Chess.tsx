@@ -10,28 +10,28 @@ const Chess = () => {
     const handleClick = () => history.push(`/${PageType.CHESS}`);
     const { pathname } = useLocation();
 
-    return ( 
+    return (
         <div className={classes.Icon_Container} id={classes.Chess_icon_container}
-        onClick={handleClick}
-        style={{ backgroundColor: pathname === `/${PageType.CHESS}` ? '#282c35' : '' }}
+            onClick={handleClick}
+            style={{ backgroundColor: pathname === `/${PageType.CHESS}` ? '#282c35' : '' }}
         >
             <div className={classes.Icon_Container_2}>
-                <svg 
+                <svg
                     className={classes.Icon}
                     style={{ fill: pathname === `/${PageType.CHESS}` ? '#a88253' : '' }}
                 >
                     <Chess_icon />
                 </svg>
             </div>
-        
+
             <div className={classes.Icon_text_container}>
                 <p className={classes.Icon_text}
-                style={{ color: pathname === `/${PageType.CHESS}` ? '#a88253' : '' }}
+                    style={{ color: pathname === `/${PageType.CHESS}` ? '#a88253' : '' }}
                 >
                     Chess
                 </p>
             </div>
-        </div> 
+        </div>
     )
 }
 

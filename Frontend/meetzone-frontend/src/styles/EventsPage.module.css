@@ -66,8 +66,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  min-width: 35%;
-  max-width: 36%;
+  min-width: 39%;
+  max-width: 40%;
   text-align: left;
   margin: 2em 0em 2em 1em;
 }
@@ -123,8 +123,19 @@
   transform: scale(0.3);
 }
 
-.Map_icon:hover {
+.Map_icon:hover,
+.del:hover {
   cursor: pointer;
+}
+
+.Delete_Icon_container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.del {
+  margin-right: 0.2em;
 }
 
 @-webkit-keyframes fadeIn {

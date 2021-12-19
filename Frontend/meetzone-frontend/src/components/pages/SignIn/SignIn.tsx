@@ -42,6 +42,7 @@ const SignIn = () => {
         if(response.ok){
             setError('');           
             console.log(data);
+            sessionStorage.setItem('user', data.user.username);
             dispatch(signIn());
             changeRoute(); 
       } 
