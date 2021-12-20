@@ -1,25 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
 import classes from '../../styles/Map.module.css';
 import { RootObject } from '../../services/EventsApi';
 import { PathType } from './PathType';
 import Marker from '../icons/Marker';
+import { RootState } from '../../app/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCenter, setZoom } from '../../features/center';
 interface Props {
   data: RootObject | undefined;
 }
 
 const Map: React.FC<Props> = ({ data }) => {
   const events = data?.events;
-  const center = { lat: 51.107, lng: 17.04 };
-  const zoom = 14;
+  const { center, zoom } = useSelector((state: RootState) => state.Center);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setCenter({ lat: 51.107, lng: 17.04 }));
+    dispatch(setZoom(14));
+  }, [events])
 
   return (
     <div className={classes.Map_container} id={center.toString()}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyBveP566wgvbJ8Iv9mftPU1jVMtF5tSYSw' }}
-        defaultCenter={center}
+        defaultCenter={{ lat: 51.107, lng: 17.04 }}
         center={center}
-        defaultZoom={zoom}
+        defaultZoom={14}
+        zoom={zoom}
         margin={[50, 50, 50, 50]}
         // onChange={}
         // onChildClick={}
@@ -124,7 +133,18 @@ const Map: React.FC<Props> = ({ data }) => {
               color = "#ceff19";
               path = PathType.TENNIS
             }
-            return (<Marker lat={Number(event.lat)} lng={Number(event.lng)} color={color} path={path} />)
+            return (
+              <Marker
+                lat={Number(event.lat)}
+                lng={Number(event.lng)}
+                color={color}
+                path={path}
+                type={event.type}
+                creator={event.creator.username}
+                people={event.number_of_people}
+                people_needed={event.people_needed}
+                id={event.id}
+              />)
           })
         }
       </GoogleMapReact>

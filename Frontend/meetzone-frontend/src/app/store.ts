@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { EventsApi } from '../services/EventsApi';
 import loginReducer  from '../features/login';
+import centerReducer  from '../features/center';
 
 export const store =  configureStore({
     reducer: {
-        Login: loginReducer,
+        Center: centerReducer,
+        Login: loginReducer,        
         [EventsApi.reducerPath]: EventsApi.reducer,
     },
 });
