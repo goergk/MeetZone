@@ -8,8 +8,8 @@ Project built as a final project for CS50's Web Programming with Python and Java
 
 
 <p align="center">
-  <img src="https://i.postimg.cc/sfH7wztC/3.png">
-  <img src="https://i.postimg.cc/GtfD2Pkm/2.png">  
+  <img src="https://i.postimg.cc/sfH7wztC/3.png" width="300px" height="560px">
+  <img src="https://i.postimg.cc/GtfD2Pkm/2.png" width="300px" height="560px">  
 </p>
 
 ### Tech Stack and tools:
