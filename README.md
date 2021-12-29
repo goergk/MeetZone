@@ -4,12 +4,8 @@
 
 Project built as a final project for CS50's Web Programming with Python and JavaScript course.
 
-![alt text](https://i.postimg.cc/CLyLF68f/1.png)
-
-
 <p align="center">
-  <img src="https://i.postimg.cc/sfH7wztC/3.png" width="300px" height="560px">
-  <img src="https://i.postimg.cc/GtfD2Pkm/2.png" width="300px" height="560px">  
+  <img src="https://i.postimg.cc/gJCt0Lq8/Meetzone-Page.png">
 </p>
 
 ### Tech Stack and tools:
